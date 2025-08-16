@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriya Sharira Journal | Rudraksha Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <header>
+                <h2>Rudraksha Hospital</h2>
+                <h3>Kriya Sharira Journal</h3>
+            </header>
+            <nav>
+                <h4>First Term</h4>
+                <ul>
+                    <li><a href="#dhatu-sarata" class="nav-link">Assessment of Dhatu-Sarata</a></li>
+                </ul>
+                <h4>Second Term</h4>
+                <ul>
+                    <li><a href="#prakriti" class="nav-link">Assessment of Prakriti</a></li>
+                    <li><a href="#dosha-vriddhi" class="nav-link">Assessment of Dosha Vrddhi/Kshaya</a></li>
+                    <li><a href="#dhatu-vriddhi" class="nav-link">Assessment of Dhatu Vrddhi/Kshaya</a></li>
+                    <li><a href="#nadi" class="nav-link">Assessment of Nadi</a></li>
+                </ul>
+                <h4>Third Term</h4>
+                <ul>
+                    <li><a href="#agni" class="nav-link">Assessment of Agni</a></li>
+                    <li><a href="#koshtha" class="nav-link">Assessment of Koshtha</a></li>
+                </ul>
+            </nav>
+            <footer>
+                <p>Gujarat Ayurved University, Jamnagar</p>
+            </footer>
+        </aside>
+
+        <main class="content" id="main-content">
+            <div class="welcome-message">
+                <h1>Welcome to the Digital Kriya Sharira Journal</h1>
+                <p>Select an assessment from the menu on the left to begin.</p>
+                <p>This digital journal is based on the syllabus for Ayurvedacharya (B.A.M.S.) as per NCISM guidelines.</p>
+            </div>
+        </main>
+    </div>
+
+    <template id="dhatu-sarata">
+        <div class="form-container">
+            [span_0](start_span)<h2>Assessment of Dhatu-Sarata Parikshana[span_0](end_span)</h2>
+            <p>This form is for assessing the excellence of the body's tissues (Dhatus). Fill in the patient details and score the obtained લક્ષણानि (characteristics).</p>
+            <form>
+                <div class="form-header">
+                    <input type="text" placeholder="Patient Name">
+                    <input type="number" placeholder="Age">
+                    <input type="text" placeholder="Gender">
+                    <input type="date" placeholder="Date">
+                </div>
+                [span_1](start_span)<h3>Overall Dhatu Saratva Status[span_1](end_span)</h3>
+                <div class="results-grid">
+                    <div><strong>Tvak (Skin):</strong> <input type="text" placeholder="Status"></div>
+                    <div><strong>Rakta (Blood):</strong> <input type="text" placeholder="Status"></div>
+                    <div><strong>Mamsa (Muscle):</strong> <input type="text" placeholder="Status"></div>
+                    <div><strong>Meda (Fat):</strong> <input type="text" placeholder="Status"></div>
+                    <div><strong>Asthi (Bone):</strong> <input type="text" placeholder="Status"></div>
+                    <div><strong>Majja (Marrow):</strong> <input type="text" placeholder="Status"></div>
+                    <div><strong>Shukra (Reproductive):</strong> <input type="text" placeholder="Status"></div>
+                </div>
+                 <button type="button" onclick="window.print()">Print This Form</button>
+            </form>
+        </div>
+    </template>
+
+    <template id="prakriti">
+        <div class="form-container">
+            [span_2](start_span)<h2>Assessment of Prakriti (Prakriti Parikshana)[span_2](end_span)</h2>
+            <p>Determine the body constitution (Vata, Pitta, Kapha) based on physical and psychological characteristics.</p>
+             <form>
+                <div class="form-header">
+                    <input type="text" placeholder="Patient Name">
+                    <input type="number" placeholder="Age">
+                    <input type="text" placeholder="Gender">
+                    <input type="date" placeholder="Date">
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Character</th>
+                            <th>Vata</th>
+                            <th>Pitta</th>
+                            <th>Kapha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        [span_3](start_span)<tr><td>1</td><td>Body frame</td><td>Lean long</td><td>Medium</td><td>Large, plump, fleshy</td></tr>[span_3](end_span)
+                        <tr><td>2</td><td>Body Mass Index</td><td>&lt; 19</td><td>19-25</td><td>&gt; [span_4](start_span)25</td></tr>[span_4](end_span)
+                        [span_5](start_span)<tr><td>6</td><td>Eyes (Sclera Colour)</td><td>Blackish</td><td>Reddish, brown</td><td>Milky white</td></tr>[span_5](end_span)
+                        [span_6](start_span)<tr><td>11</td><td>Hair (Texture)</td><td>Rough & Dry</td><td>Soft & Delicate</td><td>Soft & Shiny</td></tr>[span_6](end_span)
+                        [span_7](start_span)<tr><td>16</td><td>Skin (Temperature)</td><td>Cold</td><td>Warm</td><td>Cold</td></tr>[span_7](end_span)
+                        [span_8](start_span)<tr><td>22</td><td>Thirst</td><td>Irregular</td><td>More</td><td>Less</td></tr>[span_8](end_span)
+                        [span_9](start_span)<tr><td>26</td><td>Sleep (Character)</td><td>Interrupted, less</td><td>Uninterrupted, less</td><td>Sound, profound</td></tr>[span_9](end_span)
+                        [span_10](start_span)<tr><td>29</td><td>Working style</td><td>Quickly</td><td>Medium</td><td>Slowly</td></tr>[span_10](end_span)
+                        [span_11](start_span)<tr><td>35</td><td>Grasping</td><td>Quick, poor</td><td>Quick, good</td><td>Delayed</td></tr>[span_11](end_span)
+                    </tbody>
+                </table>
+                 <button type="button" onclick="window.print()">Print This Form</button>
+            </form>
+        </div>
+    </template>
+
+    <template id="dosha-vriddhi">
+         <div class="form-container">
+            [span_12](start_span)<h2>Assessment of Dosha Vrddhi/Kshaya Lakshana[span_12](end_span)</h2>
+            <p>Assess the symptoms of increased (Vriddhi) or decreased (Kshaya) Doshas.</p>
+            <p>Score each symptom from 0 (Absent) to 3 (Severe/Always present).</p>
+            <form>
+                [span_13](start_span)<h3>Vata Dosha[span_13](end_span)</h3>
+                <table>
+                    <thead><tr><th>Aggravated Vata (वृस्ि लक्षण)</th><th>Score (0-3)</th><th>Decreased Vata (क्षय लक्षण)</th><th>Score (0-3)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Desire for heat (उष्ण क स्मत्व)</td><td><input type="number" min="0" max="3"></td><td>Feeling weakness (अङ्ग स द)</td><td><input type="number" min="0" max="3"></td></tr>
+                        <tr><td>Constipation (शकृ तग्रह)</td><td><input type="number" min="0" max="3"></td><td>Inability to talk (अल्प भ स्र्त्वम्)</td><td><input type="number" min="0" max="3"></td></tr>
+                    </tbody>
+                </table>
+                [span_14](start_span)<h3>Pitta Dosha[span_14](end_span)</h3>
+                 <table>
+                    <thead><tr><th>Aggravated Pitta (वृस्ि लक्षण)</th><th>Score (0-3)</th><th>Decreased Pitta (क्षय लक्षण)</th><th>Score (0-3)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Increased appetite (क्षूत्)</td><td><input type="number" min="0" max="3"></td><td>Decreased appetite (मन्द स्ि)</td><td><input type="number" min="0" max="3"></td></tr>
+                        <tr><td>Burning sensation (द ह)</td><td><input type="number" min="0" max="3"></td><td>Loss of luster (प्रभ ह स्न)</td><td><input type="number" min="0" max="3"></td></tr>
+                    </tbody>
+                </table>
+                 [span_15](start_span)<h3>Kapha Dosha[span_15](end_span)</h3>
+                 <table>
+                    <thead><tr><th>Aggravated Kapha (वृस्ि लक्षण)</th><th>Score (0-3)</th><th>Decreased Kapha (क्षय लक्षण)</th><th>Score (0-3)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Increased sleep (अस्तस्नद्र)</td><td><input type="number" min="0" max="3"></td><td>Sleeplessness (अस्नद्र)</td><td><input type="number" min="0" max="3"></td></tr>
+                        <tr><td>Pallor (श्वेत्य)</td><td><input type="number" min="0" max="3"></td><td>Laxity of joints (सस्न्ध शैस्िल्य)</td><td><input type="number" min="0" max="3"></td></tr>
+                    </tbody>
+                </table>
+                 <button type="button" onclick="window.print()">Print This Form</button>
+            </form>
+        </div>
+    </template>
+
+    <template id="dhatu-vriddhi">
+        [span_16](start_span)<div class="form-container"><h2>Assessment of Dhatu Vrddhi/Kshaya[span_16](end_span)</h2><p>Content for Dhatu Vrddhi/Kshaya assessment goes here. Please refer to pages 61-75 of the journal.</p> <button type="button" onclick="window.print()">Print This Form</button></div>
+    </template>
+    <template id="nadi">
+        [span_17](start_span)<div class="form-container"><h2>Assessment of Nadi (Nadi Parikshana)[span_17](end_span)</h2><p>Content for Nadi Parikshana goes here. Please refer to pages 76-78 of the journal.</p> <button type="button" onclick="window.print()">Print This Form</button></div>
+    </template>
+    <template id="agni">
+        [span_18](start_span)<div class="form-container"><h2>Assessment of Agni (Agni Parikshana)[span_18](end_span)</h2><p>Content for Agni Parikshana goes here. Please refer to pages 80-86 of the journal.</p> <button type="button" onclick="window.print()">Print This Form</button></div>
+    </template>
+    <template id="koshtha">
+        [span_19](start_span)<div class="form-container"><h2>Assessment of Koshtha (Koshtha Parikshana)[span_19](end_span)</h2><p>Content for Koshtha Parikshana goes here. Please refer to pages 87-90 of the journal.</p> <button type="button" onclick="window.print()">Print This Form</button></div>
+    </template>
+
+</body>
+</html>
