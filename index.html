@@ -4,8 +4,245 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kriya Sharira Journal | Rudraksha Hospital</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tiro+Devanagari+Sanskrit&display=swap');
+
+        :root {
+            --primary-color: #8A0707; /* Maroon from the logo */
+            --secondary-color: #F4A261; /* Saffron/Orange shade */
+            --background-color: #FFFBF5;
+            --text-color: #333;
+            --border-color: #E0E0E0;
+            --header-font: 'Tiro Devanagari Sanskrit', serif;
+            --body-font: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--body-font);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 280px;
+            background-color: #FFFFFF;
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .sidebar header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .sidebar h2 {
+            font-family: var(--header-font);
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        .sidebar h3 {
+            font-family: var(--body-font);
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .sidebar nav h4 {
+            font-family: var(--body-font);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .sidebar nav ul li a:hover,
+        .sidebar nav ul li a.active {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+        }
+
+        .sidebar footer {
+            margin-top: auto;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Main Content Styling */
+        .content {
+            margin-left: 280px; /* Same as sidebar width */
+            padding: 2rem 3rem;
+            width: calc(100% - 280px);
+        }
+
+        .welcome-message {
+            text-align: center;
+            padding: 4rem 2rem;
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .welcome-message h1 {
+            font-family: var(--header-font);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .form-container {
+            background-color: #FFFFFF;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-container h2 {
+            font-family: var(--header-font);
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Form Elements */
+        .form-header, .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        input[type="text"], input[type="number"], input[type="date"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: var(--body-font);
+            font-size: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.8rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f9f9f9;
+            font-weight: 600;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        button:hover {
+            background-color: #6d0505;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .content {
+                margin-left: 0;
+                width: 100%;
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Print-specific styles */
+        @media print {
+            body {
+                background-color: #fff;
+            }
+            .sidebar {
+                display: none;
+            }
+            .content {
+                margin-left: 0;
+                width: 100%;
+                padding: 0;
+            }
+            .form-container {
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
+            button {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -49,7 +286,7 @@
 
     <template id="dhatu-sarata">
         <div class="form-container">
-            [span_0](start_span)<h2>Assessment of Dhatu-Sarata Parikshana[span_0](end_span)</h2>
+            <h2>Assessment of Dhatu-Sarata Parikshana</h2>
             <p>This form is for assessing the excellence of the body's tissues (Dhatus). Fill in the patient details and score the obtained લક્ષણानि (characteristics).</p>
             <form>
                 <div class="form-header">
@@ -58,7 +295,7 @@
                     <input type="text" placeholder="Gender">
                     <input type="date" placeholder="Date">
                 </div>
-                [span_1](start_span)<h3>Overall Dhatu Saratva Status[span_1](end_span)</h3>
+                <h3>Overall Dhatu Saratva Status</h3>
                 <div class="results-grid">
                     <div><strong>Tvak (Skin):</strong> <input type="text" placeholder="Status"></div>
                     <div><strong>Rakta (Blood):</strong> <input type="text" placeholder="Status"></div>
@@ -75,7 +312,7 @@
 
     <template id="prakriti">
         <div class="form-container">
-            [span_2](start_span)<h2>Assessment of Prakriti (Prakriti Parikshana)[span_2](end_span)</h2>
+            <h2>Assessment of Prakriti (Prakriti Parikshana)</h2>
             <p>Determine the body constitution (Vata, Pitta, Kapha) based on physical and psychological characteristics.</p>
              <form>
                 <div class="form-header">
@@ -95,15 +332,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        [span_3](start_span)<tr><td>1</td><td>Body frame</td><td>Lean long</td><td>Medium</td><td>Large, plump, fleshy</td></tr>[span_3](end_span)
-                        <tr><td>2</td><td>Body Mass Index</td><td>&lt; 19</td><td>19-25</td><td>&gt; [span_4](start_span)25</td></tr>[span_4](end_span)
-                        [span_5](start_span)<tr><td>6</td><td>Eyes (Sclera Colour)</td><td>Blackish</td><td>Reddish, brown</td><td>Milky white</td></tr>[span_5](end_span)
-                        [span_6](start_span)<tr><td>11</td><td>Hair (Texture)</td><td>Rough & Dry</td><td>Soft & Delicate</td><td>Soft & Shiny</td></tr>[span_6](end_span)
-                        [span_7](start_span)<tr><td>16</td><td>Skin (Temperature)</td><td>Cold</td><td>Warm</td><td>Cold</td></tr>[span_7](end_span)
-                        [span_8](start_span)<tr><td>22</td><td>Thirst</td><td>Irregular</td><td>More</td><td>Less</td></tr>[span_8](end_span)
-                        [span_9](start_span)<tr><td>26</td><td>Sleep (Character)</td><td>Interrupted, less</td><td>Uninterrupted, less</td><td>Sound, profound</td></tr>[span_9](end_span)
-                        [span_10](start_span)<tr><td>29</td><td>Working style</td><td>Quickly</td><td>Medium</td><td>Slowly</td></tr>[span_10](end_span)
-                        [span_11](start_span)<tr><td>35</td><td>Grasping</td><td>Quick, poor</td><td>Quick, good</td><td>Delayed</td></tr>[span_11](end_span)
+                        <tr><td>1</td><td>Body frame</td><td>Lean long</td><td>Medium</td><td>Large, plump, fleshy</td></tr>
+                        <tr><td>2</td><td>Body Mass Index</td><td>&lt; 19</td><td>19-25</td><td>&gt; 25</td></tr>
+                        <tr><td>6</td><td>Eyes (Sclera Colour)</td><td>Blackish</td><td>Reddish, brown</td><td>Milky white</td></tr>
+                        <tr><td>11</td><td>Hair (Texture)</td><td>Rough & Dry</td><td>Soft & Delicate</td><td>Soft & Shiny</td></tr>
+                        <tr><td>16</td><td>Skin (Temperature)</td><td>Cold</td><td>Warm</td><td>Cold</td></tr>
+                        <tr><td>22</td><td>Thirst</td><td>Irregular</td><td>More</td><td>Less</td></tr>
+                        <tr><td>26</td><td>Sleep (Character)</td><td>Interrupted, less</td><td>Uninterrupted, less</td><td>Sound, profound</td></tr>
+                        <tr><td>29</td><td>Working style</td><td>Quickly</td><td>Medium</td><td>Slowly</td></tr>
+                        <tr><td>35</td><td>Grasping</td><td>Quick, poor</td><td>Quick, good</td><td>Delayed</td></tr>
                     </tbody>
                 </table>
                  <button type="button" onclick="window.print()">Print This Form</button>
@@ -113,11 +350,11 @@
 
     <template id="dosha-vriddhi">
          <div class="form-container">
-            [span_12](start_span)<h2>Assessment of Dosha Vrddhi/Kshaya Lakshana[span_12](end_span)</h2>
+            <h2>Assessment of Dosha Vrddhi/Kshaya Lakshana</h2>
             <p>Assess the symptoms of increased (Vriddhi) or decreased (Kshaya) Doshas.</p>
             <p>Score each symptom from 0 (Absent) to 3 (Severe/Always present).</p>
             <form>
-                [span_13](start_span)<h3>Vata Dosha[span_13](end_span)</h3>
+                <h3>Vata Dosha</h3>
                 <table>
                     <thead><tr><th>Aggravated Vata (वृस्ि लक्षण)</th><th>Score (0-3)</th><th>Decreased Vata (क्षय लक्षण)</th><th>Score (0-3)</th></tr></thead>
                     <tbody>
@@ -125,7 +362,7 @@
                         <tr><td>Constipation (शकृ तग्रह)</td><td><input type="number" min="0" max="3"></td><td>Inability to talk (अल्प भ स्र्त्वम्)</td><td><input type="number" min="0" max="3"></td></tr>
                     </tbody>
                 </table>
-                [span_14](start_span)<h3>Pitta Dosha[span_14](end_span)</h3>
+                <h3>Pitta Dosha</h3>
                  <table>
                     <thead><tr><th>Aggravated Pitta (वृस्ि लक्षण)</th><th>Score (0-3)</th><th>Decreased Pitta (क्षय लक्षण)</th><th>Score (0-3)</th></tr></thead>
                     <tbody>
@@ -133,7 +370,7 @@
                         <tr><td>Burning sensation (द ह)</td><td><input type="number" min="0" max="3"></td><td>Loss of luster (प्रभ ह स्न)</td><td><input type="number" min="0" max="3"></td></tr>
                     </tbody>
                 </table>
-                 [span_15](start_span)<h3>Kapha Dosha[span_15](end_span)</h3>
+                 <h3>Kapha Dosha</h3>
                  <table>
                     <thead><tr><th>Aggravated Kapha (वृस्ि लक्षण)</th><th>Score (0-3)</th><th>Decreased Kapha (क्षय लक्षण)</th><th>Score (0-3)</th></tr></thead>
                     <tbody>
@@ -147,17 +384,65 @@
     </template>
 
     <template id="dhatu-vriddhi">
-        [span_16](start_span)<div class="form-container"><h2>Assessment of Dhatu Vrddhi/Kshaya[span_16](end_span)</h2><p>Content for Dhatu Vrddhi/Kshaya assessment goes here. Please refer to pages 61-75 of the journal.</p> <button type="button" onclick="window.print()">Print This Form</button></div>
+        <div class="form-container"><h2>Assessment of Dhatu Vrddhi/Kshaya</h2><p>Content for Dhatu Vrddhi/Kshaya assessment goes here. Please refer to pages 61-75 of the journal.</p> <button type="button" onclick="window.print()">Print This Form</button></div>
     </template>
     <template id="nadi">
-        [span_17](start_span)<div class="form-container"><h2>Assessment of Nadi (Nadi Parikshana)[span_17](end_span)</h2><p>Content for Nadi Parikshana goes here. Please refer to pages 76-78 of the journal.</p> <button type="button" onclick="window.print()">Print This Form</button></div>
+        <div class="form-container"><h2>Assessment of Nadi (Nadi Parikshana)</h2><p>Content for Nadi Parikshana goes here. Please refer to pages 76-78 of the journal.</p> <button type="button" onclick="window.print()">Print This Form</button></div>
     </template>
     <template id="agni">
-        [span_18](start_span)<div class="form-container"><h2>Assessment of Agni (Agni Parikshana)[span_18](end_span)</h2><p>Content for Agni Parikshana goes here. Please refer to pages 80-86 of the journal.</p> <button type="button" onclick="window.print()">Print This Form</button></div>
+        <div class="form-container"><h2>Assessment of Agni (Agni Parikshana)</h2><p>Content for Agni Parikshana goes here. Please refer to pages 80-86 of the journal.</p> <button type="button" onclick="window.print()">Print This Form</button></div>
     </template>
     <template id="koshtha">
-        [span_19](start_span)<div class="form-container"><h2>Assessment of Koshtha (Koshtha Parikshana)[span_19](end_span)</h2><p>Content for Koshtha Parikshana goes here. Please refer to pages 87-90 of the journal.</p> <button type="button" onclick="window.print()">Print This Form</button></div>
+        <div class="form-container"><h2>Assessment of Koshtha (Koshtha Parikshana)</h2><p>Content for Koshtha Parikshana goes here. Please refer to pages 87-90 of the journal.</p> <button type="button" onclick="window.print()">Print This Form</button></div>
     </template>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainContent = document.getElementById('main-content');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const welcomeMessage = document.querySelector('.welcome-message');
+
+            // Function to load content from a template
+            const loadContent = (templateId) => {
+                // Hide welcome message
+                if (welcomeMessage) {
+                    welcomeMessage.style.display = 'none';
+                }
+
+                // Clear existing content
+                mainContent.innerHTML = '';
+
+                // Find the template
+                const template = document.getElementById(templateId);
+
+                // If template exists, clone and append it
+                if (template) {
+                    const clone = template.content.cloneNode(true);
+                    mainContent.appendChild(clone);
+                } else {
+                    mainContent.innerHTML = '<p>Error: Content not found.</p>';
+                }
+            };
+
+            // Add click event listeners to all navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default link behavior
+
+                    // Remove 'active' class from all links
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+
+                    // Add 'active' class to the clicked link
+                    link.classList.add('active');
+
+                    // Get the template ID from the href attribute (e.g., "#prakriti")
+                    const templateId = link.getAttribute('href').substring(1);
+
+                    // Load the corresponding content
+                    loadContent(templateId);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
